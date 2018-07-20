@@ -21,8 +21,68 @@ public class PageBuilderPage {
 	private String view_site="//div[contains(@class,'preview-btn')]";
 	private String subscribe="//strong[text()='Subscribe']";
 	
+	//nav
+	private String page_dropdown="//div[contains(@class,'page-dropdown')]/div/span[@class='ico-arrow-down ']";
+	private String home="//div[@class='page-drop-list-group checked']/ul/li[@data-name='home']";
+	private String about_us="//div[@class='page-drop-list-group checked']/ul/li[@data-name='about-us']";
+	private String shipping_returns="//div[@class='page-drop-list-group checked']/ul/li[@data-name='shipping-returns']";
+	private String faq="//div[@class='page-drop-list-group checked']/ul/li[@data-name='faq']";
+	private String contact_us="//div[@class='page-drop-list-group checked']/ul/li[@data-name='contact-us']";
+	private String add_Page="//div[@class='page-add']";
+	
+	private String page_setting="//div[@data-for='page-setting-btn-tip']";
+	private String page_section="//div[@data-for='page-section-btn-tip']";
+	private String device_dropdown="//div[contains(@class,'device-dropdown')]";
+	private String mobile_view="//button[@data-target='mobile']";
+	private String tab_view="//button[@data-target='tablet']";
+
+	
 	public PageBuilderPage(WebDriver driver) {
 		this.driver=driver;
+	}
+	
+	public void clickDeviceDropDown() {
+		driver.findElement(By.xpath(device_dropdown)).click();
+	}
+	
+	public void selectMobileView() {
+		driver.findElement(By.xpath(mobile_view)).click();
+	}
+	
+	public void selectTabView() {
+		driver.findElement(By.xpath(tab_view)).click();
+	}
+	
+	public void clickPageSetting() {
+		driver.findElement(By.xpath(page_setting)).click();
+	}
+	
+	public void clickPageSection() {
+		driver.findElement(By.xpath(page_section)).click();
+	}
+	
+	public void clickPageDropDown() {
+		driver.findElement(By.xpath(page_dropdown)).click();
+	}
+	
+	public void selectHome() {
+		driver.findElement(By.xpath(home)).click();
+	}
+	
+	public void selectAboutUs() {
+		driver.findElement(By.xpath(about_us)).click();
+	}
+	public void selectShippingReturns() {
+		driver.findElement(By.xpath(shipping_returns)).click();
+	}
+	public void selectFaq() {
+		driver.findElement(By.xpath(faq)).click();
+	}
+	public void selectContactUs() {
+		driver.findElement(By.xpath(contact_us)).click();
+	}
+	public void selectAddPage() {
+		driver.findElement(By.xpath(add_Page)).click();
 	}
 	
 	public void clickSubscribe() {

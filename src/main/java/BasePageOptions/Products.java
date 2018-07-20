@@ -30,8 +30,42 @@ public class Products {
 	private String uploadimage="//input[@id='upload-button']";
 	private String skipEditing="//a[contains(@class,'skip-link')]";
 	private String editHomePage="//a[contains(@class,'next-link')]";
-
+	
+	private String add_product="//div[contains(@class,'builder-side')]/a[@class='add-product-btn']";
+	private String import_products="//a[contains(@class,'import-product-btn')]";
+	private String import_options="//div[@class='modal-content']/div/div/a/img[contains(@alt,";
+	
+	private String all_products="//div[@class='navbar-content-pane']/a[@data-action='show']";
+	private String selectCategory="//a[@data-action='show']/span[@class='title' and text()='";
+	
+	private String add_subcategory="//span[@class='title' and text()='";
+	
+	
 	WebElement element;
+	
+	public void addSubCategory(String option) {
+		driver.findElement(By.xpath(add_subcategory+option+"']/parent::a/following-sibling::ul")).click();
+	}
+	
+	public void chooseCategory(String option) {
+		driver.findElement(By.xpath(selectCategory+option+"']")).click();
+	}
+	
+	public void clickAllProduct() {
+		driver.findElement(By.xpath(all_products)).click();
+	}
+	
+	public void clickAddProduct() {
+		driver.findElement(By.xpath(add_product)).click();
+	} 
+	
+	public void clickImportProducts() {
+		driver.findElement(By.xpath(import_products)).click();
+	} 
+	
+	public void clickImportOptions(String option) {
+		driver.findElement(By.xpath(""+import_options+"'"+option+"')]")).click();
+	}
 
 	public void clickEditHomePage() {
 		driver.findElement(By.xpath(editHomePage)).click();
